@@ -1,5 +1,5 @@
-source("C:/nnn/Rm16.R")
-
+##source("C:/nnn/Rm16.R")
+source("https://raw.githubusercontent.com/namijeong/tar/Rm16.R")
 
 ###############################################
 ##Book p401, Àü±â¼³ºñµ¥ÀÌÅÍ, p-value = 0.7875
