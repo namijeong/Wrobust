@@ -76,8 +76,8 @@ for ( i in seq_along(DELTA) ) {
   LCL.med3[i]= qweibull(  a2, shape=para$shape, scale=para$scale)
 }
 
-ylim = c(10000, 100000)
-ylim1 = c(0,40)
+ylim = c(-50000, 100000)
+ylim1 = c(0,80)
 par(mfrow=c(1,2), mar=c(5,5,3,1), omi=c(0,0,0,0), cex=0.5, mex=0.5)
 
 
@@ -88,7 +88,7 @@ lines(DELTA, UCL.wp, col="dark Gray", type="l", lwd=2)
 lines(DELTA, UCL.med1, col="Pale violet red2", type="l", lwd=2)
 lines(DELTA, UCL.med2, col="dark Orchid2", type="l", lwd=2)
 lines(DELTA, UCL.med3, col="slate blue", type="l", lwd=2)
-legend (1e-05, -10, lty=c(1,1) ,col=c("dark gray","Dim Gray","Pale violet red2","dark Orchid2","slate blue"), 
+legend (1e-05,-15000, lty=c(1,1) ,col=c("dark gray","Dim Gray","Pale violet red2","dark Orchid2","slate blue"), 
         legend=c("MLE", "WP","med1","med2","med3"), bty="n"  ,lwd = 2, cex =2)
 
 plot(NA, NA, xlab=expression(delta), log="x", ylab="LCL", type="n", xlim=range(DELTA), ylim=ylim1 )
@@ -98,8 +98,9 @@ lines(DELTA, LCL.wp, col="dark Gray", type="l", lwd=2)
 lines(DELTA, LCL.med1, col="Pale violet red2", type="l", lwd=2)
 lines(DELTA, LCL.med2, col="dark Orchid2", type="l", lwd=2)
 lines(DELTA, LCL.med3, col="slate blue", type="l", lwd=2)
-legend (1e-05, 0.07, lty=c(1,1) ,col=c("dim gray","dark Gray","Pale violet red2","dark Orchid2","slate blue"),
+legend (1e-05, 70, lty=c(1,1) ,col=c("dim gray","dark Gray","Pale violet red2","dark Orchid2","slate blue"),
         legend=c("MLE", "WP","med1","med2","med3"), bty="n"  ,lwd = 2, cex =2)
+
 
 #lines(DELTA, LCL.seki, col="red", type="l", lwd=2)
 
