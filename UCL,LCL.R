@@ -120,7 +120,7 @@ lines(DELTA, UCL.wp, col="dark Gray", type="l", lwd=2, lty=3)
 lines(DELTA, UCL.med1, col="Pale violet red2", type="l", lwd=2, lty=2)
 lines(DELTA, UCL.med2, col="dark Orchid2", type="l", lwd=2, lty=2)
 lines(DELTA, UCL.med3, col="slate blue", type="l", lwd=2, lty=2)
-legend (1e-05,-10, lty=c(1,3,3,2,2,2) ,col=c("black","dark gray","Dim Gray","Pale violet red2","dark Orchid2","slate blue"), 
+legend (1e-05,-5, lty=c(1,3,3,2,2,2) ,col=c("black","dark gray","Dim Gray","Pale violet red2","dark Orchid2","slate blue"), 
         legend=c("MLE_pure","MLE", "WP","med1","med2","med3"), bty="n"  ,lwd = 2, cex =2)
 
 plot(NA, NA, xlab=expression(delta), log="x", ylab="LCL", type="n", xlim=range(DELTA), ylim=ylim1 )
@@ -130,12 +130,12 @@ lines(DELTA, LCL.wp, col="dark Gray", type="l", lwd=2,lty=3)
 lines(DELTA, LCL.med1, col="Pale violet red2", type="l", lwd=2,lty=2)
 lines(DELTA, LCL.med2, col="dark Orchid2", type="l", lwd=2,lty=2)
 lines(DELTA, LCL.med3, col="slate blue", type="l", lwd=2,lty=2)
-legend (1e-05, 0.07, lty=c(1,3,3,2,2,2) ,col=c("black","dim gray","dark Gray","Pale violet red2","dark Orchid2","slate blue"),
+legend (1e-05, 0.077, lty=c(1,3,3,2,2,2) ,col=c("black","dim gray","dark Gray","Pale violet red2","dark Orchid2","slate blue"),
         legend=c("MLE_pure","MLE", "WP","med1","med2","med3"), bty="n"  ,lwd = 2, cex =2)
 
 
 
-#
+#==================================================================================
 #lines(DELTA, CL.mle, col="black", type="l", lwd=2)
 
 #abline( h =  CL.mle[n], col="red", lty=3, lwd=0.2)    ## MLE without noise 
