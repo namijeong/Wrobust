@@ -2,7 +2,7 @@ source("C:/nnn/Rm16.R")
 
 
 ###############################################
-##Book p401, ¿¸±‚º≥∫Òµ•¿Ã≈Õ, p-value = 0.7875
+##Book p401, √Ä√º¬±√¢¬º¬≥¬∫√±¬µ¬•√Ä√å√Ö√ç, p-value = 0.7875
 
 data=c(1054.8, 6280.6, 2765.5, 16612.2, 1149.5,
        65.3, 9062.3, 15154.4, 17292.3, 16146.3,
@@ -78,25 +78,29 @@ for ( i in seq_along(DELTA) ) {
 
 ylim = c(10000, 100000)
 ylim1 = c(0,40)
-par(mfrow=c(2,1), mar=c(5,5,3,1), omi=c(0,0,0,0), cex=0.5, mex=0.5)
+par(mfrow=c(1,2), mar=c(5,5,3,1), omi=c(0,0,0,0), cex=0.5, mex=0.5)
 
 
-plot(NA, NA, xlab=expression(delta), log="x", ylab="CC", type="n", xlim=range(DELTA), ylim=ylim )
-lines(DELTA, UCL.mle, col="dark gray", type="l", lwd=2)
-abline( h = UCL.mle[n], col="black", lwd=2)           ## MLE without noise 
-lines(DELTA, UCL.wp, col="Dim Gray", type="l", lwd=2)
+plot(NA, NA, xlab=expression(delta), log="x", ylab="UCL", type="n", xlim=range(DELTA), ylim=ylim )
+lines(DELTA, UCL.mle, col="dim gray", type="l", lwd=2)
+abline( h = UCL.mle[n], col="black", lwd=0.2)           ## MLE without noise 
+lines(DELTA, UCL.wp, col="dark Gray", type="l", lwd=2)
 lines(DELTA, UCL.med1, col="Pale violet red2", type="l", lwd=2)
 lines(DELTA, UCL.med2, col="dark Orchid2", type="l", lwd=2)
 lines(DELTA, UCL.med3, col="slate blue", type="l", lwd=2)
+legend (1e-05, -10, lty=c(1,1) ,col=c("dark gray","Dim Gray","Pale violet red2","dark Orchid2","slate blue"), 
+        legend=c("MLE", "WP","med1","med2","med3"), bty="n"  ,lwd = 2, cex =2)
 
-
-plot(NA, NA, xlab=expression(delta), log="x", ylab="CC", type="n", xlim=range(DELTA), ylim=ylim1 )
-lines(DELTA,  LCL.mle, col="dark gray", type="l", lwd=2)
-abline( h = LCL.mle[n], col="black", lwd=2)
-lines(DELTA, LCL.wp, col="Dim Gray", type="l", lwd=2)
+plot(NA, NA, xlab=expression(delta), log="x", ylab="LCL", type="n", xlim=range(DELTA), ylim=ylim1 )
+lines(DELTA,  LCL.mle, col="dim gray", type="l", lwd=2)
+abline( h = LCL.mle[n], col="black", lwd=0.2)
+lines(DELTA, LCL.wp, col="dark Gray", type="l", lwd=2)
 lines(DELTA, LCL.med1, col="Pale violet red2", type="l", lwd=2)
 lines(DELTA, LCL.med2, col="dark Orchid2", type="l", lwd=2)
 lines(DELTA, LCL.med3, col="slate blue", type="l", lwd=2)
+legend (1e-05, 0.07, lty=c(1,1) ,col=c("dim gray","dark Gray","Pale violet red2","dark Orchid2","slate blue"),
+        legend=c("MLE", "WP","med1","med2","med3"), bty="n"  ,lwd = 2, cex =2)
+
 #lines(DELTA, LCL.seki, col="red", type="l", lwd=2)
 
 #lines(DELTA, CL.mle, col="black", type="l", lwd=2)
