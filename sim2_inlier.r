@@ -9,8 +9,8 @@ set.seed(1)
 
 n = 50
 ITER = 1000
-shape0 = 2; scale0 = 1
-## noise = 5   ### <--- See inlier noise (wp method is not ROBUT with inliner noise)
+shape0 = 3; scale0 = 1
+noise = 5   ### <--- See inlier noise (wp method is not ROBUT with inliner noise)
                ### <--- MLE is OK with inliner noise 
 
 SHAPE.mle = SHAPE.wp = SHAPE.wmed = SHAPE.med1 = SHAPE.med2 = SHAPE.med3 = numeric(ITER)
@@ -57,21 +57,21 @@ for ( i in seq_len(ITER) ) {
 
 #----------------------------------------------------------------
 par( mfrow=c(4,2), mar=c(5,5,3,1), omi=c(0,0,0,0), cex=0.5,mex=0.5 )
- plot( SHAPE.mle, SCALE.mle, xlim=c(0,9), ylim=c(0,4) )
+ plot( SHAPE.mle, SCALE.mle, xlim=c(0,9), ylim=c(0,15) )
      abline(v=shape0, h=scale0, col="gold")
- plot( SHAPE.wp,  SCALE.wp,  xlim=c(0,9), ylim=c(0,4) )
+ plot( SHAPE.wp,  SCALE.wp,  xlim=c(0,9), ylim=c(0,15) )
      abline(v=shape0, h=scale0, col="gold")
- plot( SHAPE.seki,  SCALE.seki,  xlim=c(0,9), ylim=c(0,4) )
+ plot( SHAPE.seki,  SCALE.seki,  xlim=c(0,9), ylim=c(0,15) )
      abline(v=shape0, h=scale0, col="gold")
- plot( SHAPE.e,  SCALE.e,  xlim=c(0,9), ylim=c(0,4) )
+ plot( SHAPE.e,  SCALE.e,  xlim=c(0,9), ylim=c(0,15) )
      abline(v=shape0, h=scale0, col="gold")
- plot( SHAPE.wmed,  SCALE.wmed,  xlim=c(0,9), ylim=c(0,4) )
+ plot( SHAPE.wmed,  SCALE.wmed,  xlim=c(0,9), ylim=c(0,15) )
      abline(v=shape0, h=scale0, col="gold")
- plot( SHAPE.med1,  SCALE.med1,  xlim=c(0,9), ylim=c(0,4) )
+ plot( SHAPE.med1,  SCALE.med1,  xlim=c(0,9), ylim=c(0,15) )
      abline(v=shape0, h=scale0, col="gold")
- plot( SHAPE.med2,  SCALE.med2,  xlim=c(0,9), ylim=c(0,4) )
+ plot( SHAPE.med2,  SCALE.med2,  xlim=c(0,9), ylim=c(0,15) )
      abline(v=shape0, h=scale0, col="gold")
- plot( SHAPE.med3,  SCALE.med3,  xlim=c(0,9), ylim=c(0,4) )
+ plot( SHAPE.med3,  SCALE.med3,  xlim=c(0,9), ylim=c(0,15) )
      abline(v=shape0, h=scale0, col="gold")
 #----------------------------------------------------------------
 
