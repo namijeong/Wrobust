@@ -1,9 +1,10 @@
 
+source("C:/nnn/Rm16.R")
 #data = rweibull(n, shape=shape0, scale=scale0)
 data = 1000* c(100,  90,  59, 117, 177,  98, 125, 118,  99, 132, 97, 87, 126, 107, 66, 186,  158,  80,  69, 109)
-
+library(weibullness)
 #data = c(15.1 ,12.2 ,17.3, 14.3 , 7.9 ,18.2 ,24.6 ,13.5, 10.0, 30.5)
-# hist(data)
+ hist(data)
 weibull.mle(data, threshold=0)
 weibull.wp(data)
 weibull.e(data)
@@ -25,7 +26,7 @@ par(mar=c(5,5,5,5), omi=c(0,0,0,0), cex=0.6,mex=0.5)
 #==============================================================================
 xlim = range( log(data) );  
 ylim = range( log(-log(Fall) ) )
-plot(  log(data.sort),  log(-log(1-Fall)), main = "Weibull Probability", pch=1, xlim=xlim, ylim=ylim, 
+plot(  log(data.sort),  log(-log(1-Fall)), main = "Weibull Probability", pch=16, xlim=xlim, ylim=ylim, 
        xlab="logt", ylab="log{-log(1-F(t))}",lwd = 1.5, cex =1.5  )
 
 xxx = seq(min(X),max(X), l=100)
@@ -35,4 +36,4 @@ lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.med1(data)$shape,scale=wei
 lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.med2(data)$shape,scale=weibull.med2(data)$scale))), lty=4, col ="dark Orchid2" ,lwd = 2)
 lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.med3(data)$shape,scale=weibull.med3(data)$scale))), lty=5, col ="slate blue" ,lwd = 2)
 
-legend (12, -2, lty=c(1,2,3,4,5) ,col=c("dark gray","Dim Gray","Pale violet red2","dark Orchid2","slate blue"),legend=c("MLE", "WP","MED1","MED2","MED3"), bty="n",lwd = 2, cex =1.5)
+legend (11.8, -2, lty=c(1,2,3,4,5) ,col=c("dark gray","Dim Gray","Pale violet red2","dark Orchid2","slate blue"),legend=c("MLE", "WP","MED1","MED2","MED3"), bty="n",lwd = 2, cex =1.5)
