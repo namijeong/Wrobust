@@ -108,8 +108,8 @@ for ( i in seq_along(DELTA) ) {
   LCL.med3[i]= qweibull(  a2, shape=para$shape, scale=para$scale)
 }
 
-ylim = c(-20, 45)
-ylim1=c(0,0.08)
+ylim = c(15, 33)
+ylim1=c(0,0.03)
 par(mfrow=c(1,2), mar=c(5,5,3,1), omi=c(0,0,0,0), cex=0.5, mex=0.5)
 
 
