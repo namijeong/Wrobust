@@ -32,8 +32,17 @@ MF(x, shape=weibull.med1(data)$shape, scale=weibull.med1(data)$scale)
 MF(x, shape=weibull.med2(data)$shape, scale=weibull.med2(data)$scale)
 MF(x, shape=weibull.med3(data)$shape, scale=weibull.med3(data)$scale)
 
+#Blife
+prob = 0.1
 
-
+1 - (1-qweibull(prob, shape=weibull.mle(data)$shape, scale=weibull.mle(data)$scale))
+1 - (1-qweibull(prob, shape=weibull.wp(data)$shape, scale=weibull.wp(data)$scale))
+1 - (1-qweibull(prob, shape=weibull.seki(data)$shape, scale=weibull.seki(data)$scale))
+1 - (1-qweibull(prob, shape=weibull.e(data)$shape, scale=weibull.e(data)$scale))
+1 - (1-qweibull(prob, shape=weibull.wmed(data)$shape, scale=weibull.wmed(data)$scale))
+1 - (1-qweibull(prob, shape=weibull.med1(data)$shape, scale=weibull.med1(data)$scale))
+1 - (1-qweibull(prob, shape=weibull.med2(data)$shape, scale=weibull.med2(data)$scale))
+1 - (1-qweibull(prob, shape=weibull.med3(data)$shape, scale=weibull.med3(data)$scale))
 
 
 
