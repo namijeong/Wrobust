@@ -1,5 +1,5 @@
 
-source("https://raw.githubusercontent.com/namijeong/main/Rm16.R")
+source("https://raw.githubusercontent.com/namijeong/tar/blob/main/Rm16.R")
 ## source("Rm16.R")
 ##source("C:/nnn/Rm16.R")
 #------------------------------
