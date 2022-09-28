@@ -1,7 +1,7 @@
 
-source("https://raw.githubusercontent.com/namijeong/tar/blob/main/Rm16.R")
+#source("https://raw.githubusercontent.com/namijeong/tar/blob/main/Rm16.R")
 ## source("Rm16.R")
-##source("C:/nnn/Rm16.R")
+source("C:/nnn/Rm16.R")
 #------------------------------
 library(weibullness)
 
@@ -19,23 +19,23 @@ library(weibullness)
  weibull.med3(data)
    
 #MTTF
-MF=function(x, shape,scale){
+MF=function(shape,scale){
   scale*gamma(1+1/shape)
 }
 
-MF(x, shape=weibull.mle(data)$shape, scale=weibull.mle(data)$scale)
-MF(x, shape=weibull.wp(data)$shape, scale=weibull.wp(data)$scale)
-MF(x, shape=weibull.seki(data)$shape, scale=weibull.seki(data)$scale)
-MF(x, shape=weibull.e(data)$shape, scale=weibull.e(data)$scale)
-MF(x, shape=weibull.wmed(data)$shape, scale=weibull.wmed(data)$scale)
-MF(x, shape=weibull.med1(data)$shape, scale=weibull.med1(data)$scale)
-MF(x, shape=weibull.med2(data)$shape, scale=weibull.med2(data)$scale)
-MF(x, shape=weibull.med3(data)$shape, scale=weibull.med3(data)$scale)
+MF( shape=weibull.mle(data,0)$shape, scale=weibull.mle(data,0)$scale)
+MF( shape=weibull.wp(data)$shape, scale=weibull.wp(data)$scale)
+MF( shape=weibull.seki(data)$shape, scale=weibull.seki(data)$scale)
+MF( shape=weibull.e(data)$shape, scale=weibull.e(data)$scale)
+MF( shape=weibull.wmed(data)$shape, scale=weibull.wmed(data)$scale)
+MF( shape=weibull.med1(data)$shape, scale=weibull.med1(data)$scale)
+MF( shape=weibull.med2(data)$shape, scale=weibull.med2(data)$scale)
+MF( shape=weibull.med3(data)$shape, scale=weibull.med3(data)$scale)
 
 #Blife
 prob = 0.1
 
-1 - (1-qweibull(prob, shape=weibull.mle(data)$shape, scale=weibull.mle(data)$scale))
+1 - (1-qweibull(prob, shape=weibull.mle(data,0)$shape, scale=weibull.mle(data,0)$scale))
 1 - (1-qweibull(prob, shape=weibull.wp(data)$shape, scale=weibull.wp(data)$scale))
 1 - (1-qweibull(prob, shape=weibull.seki(data)$shape, scale=weibull.seki(data)$scale))
 1 - (1-qweibull(prob, shape=weibull.e(data)$shape, scale=weibull.e(data)$scale))
