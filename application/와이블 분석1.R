@@ -45,6 +45,19 @@ prob = 0.1
 1 - (1-qweibull(prob, shape=weibull.med3(data)$shape, scale=weibull.med3(data)$scale))
 
 
+#==============================================================================
+TINY = .Machine$double.neg.eps
+BIG = .Machine$double.xmax^0.25
+EQ1 = function(x, prob, shape, scale) { 
+    1 - pweibull(x, shape=shape, scale=scale,lower.tail=F) - prob
+}
+
+# B10
+prob = 0.1
+uniroot(EQ1, interval=c(TINY, BIG), prob=prob, shape=shape, scale=scale)
+1 - (1-qweibull(prob, shape, scale))
+
+
 
 
 
