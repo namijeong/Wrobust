@@ -1,4 +1,4 @@
-source("C:/nnn/Rm16.R")
+source("https://raw.githubusercontent.com/namijeong/tar/main/Rm16.R")
 
 # DATA 
 ############################################################################################
