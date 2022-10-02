@@ -1,4 +1,4 @@
-source("C:/nnn/Rm16.R")
+source("https://raw.githubusercontent.com/namijeong/tar/main/Rm16.R")
 #
 data = 1000* c(100,  90,  59, 117, 177,  98, 125, 118,  99, 132, 97, 87, 126, 107, 66, 186,  158,  80,  69, 109)
 library(weibullness)
