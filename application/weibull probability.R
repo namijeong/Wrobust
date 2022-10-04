@@ -30,7 +30,7 @@ plot(  log(data.sort),  log(-log(1-Fall)), main = "Weibull Probability", pch=16,
        xlab="logt", ylab="log{-log(1-F(t))}",lwd = 1.5, cex =1.5  )
 
 xxx = seq(min(X),max(X), l=100)
-lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.mle(data)$shape,scale=weibull.mle(data)$scale))), lty=1, col ="red" ,lwd = 2)
+lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.mle(data,0)$shape,scale=weibull.mle(data,0)$scale))), lty=1, col ="red" ,lwd = 2)
 lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.wp(data)$shape,scale=weibull.wp(data)$scale))), lty=2, col ="orange red" ,lwd = 2)
 lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.med1(data)$shape,scale=weibull.med1(data)$scale))), lty=1, col ="dark blue" ,lwd = 2)
 lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.med2(data)$shape,scale=weibull.med2(data)$scale))), lty=3, col ="navy blue" ,lwd = 2)
