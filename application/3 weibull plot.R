@@ -38,11 +38,11 @@ plot(  log(data.sort),  log(-log(1-Fall)), main = "Weibull Probability", pch=16,
        xlab="logt", ylab="log{-log(1-F(t))}",lwd = 1.5, cex =1.5  )
 
 xxx = seq(min(X),max(X), l=100)
-lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.mle(data,0)$shape,scale=weibull.mle(data,0)$scale))), lty=1, col ="red" ,lwd = 2)
-lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.wp(data)$shape,scale=weibull.wp(data)$scale))), lty=2, col ="orange red" ,lwd = 2)
-lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.med1(data)$shape,scale=weibull.med1(data)$scale))), lty=1, col ="dark blue" ,lwd = 2)
-lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.med2(data)$shape,scale=weibull.med2(data)$scale))), lty=3, col ="navy blue" ,lwd = 2)
-lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.med3(data)$shape,scale=weibull.med3(data)$scale))), lty=4, col ="slate blue" ,lwd = 2)
+lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.mle(X,0)$shape,scale=weibull.mle(data,0)$scale))), lty=1, col ="red" ,lwd = 2)
+lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.wp(X)$shape,scale=weibull.wp(X)$scale))), lty=2, col ="orange red" ,lwd = 2)
+lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.med1(X)$shape,scale=weibull.med1(X)$scale))), lty=1, col ="dark blue" ,lwd = 2)
+lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.med2(X)$shape,scale=weibull.med2(X)$scale))), lty=3, col ="navy blue" ,lwd = 2)
+lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.med3(X)$shape,scale=weibull.med3(X)$scale))), lty=4, col ="slate blue" ,lwd = 2)
 
 legend (9, 1.5, lty=c(1,2,1,3,4) ,col=c("red","orange red","dark blue","navy blue","slate blue"),legend=c("MLE", "WP","MED1","MED2","MED3"), bty="n",lwd = 2, cex =1.5)
 #inlier==============================================================================
@@ -56,11 +56,12 @@ Fall     = ppoints( X )
 plot(  log(data.sort),  log(-log(1-Fall)), main = "Weibull Probability", pch=16,xlim=xlim,  
        xlab="logt", ylab="log{-log(1-F(t))}",lwd = 1.5, cex =1.5  )
 
-lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.mle(data,0)$shape,scale=weibull.mle(data,0)$scale))), lty=1, col ="red" ,lwd = 2)
-lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.wp(data)$shape,scale=weibull.wp(data)$scale))), lty=2, col ="orange red" ,lwd = 2)
-lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.med1(data)$shape,scale=weibull.med1(data)$scale))), lty=1, col ="dark blue" ,lwd = 2)
-lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.med2(data)$shape,scale=weibull.med2(data)$scale))), lty=3, col ="navy blue" ,lwd = 2)
-lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.med3(data)$shape,scale=weibull.med3(data)$scale))), lty=4, col ="slate blue" ,lwd = 2)
+xxx = seq(min(X),max(X), l=100)
+lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.mle(X,0)$shape,scale=weibull.mle(data,0)$scale))), lty=1, col ="red" ,lwd = 2)
+lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.wp(X)$shape,scale=weibull.wp(X)$scale))), lty=2, col ="orange red" ,lwd = 2)
+lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.med1(X)$shape,scale=weibull.med1(X)$scale))), lty=1, col ="dark blue" ,lwd = 2)
+lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.med2(X)$shape,scale=weibull.med2(X)$scale))), lty=3, col ="navy blue" ,lwd = 2)
+lines(log(xxx), log(-log(Sweibull( xxx, shape=weibull.med3(X)$shape,scale=weibull.med3(X)$scale))), lty=4, col ="slate blue" ,lwd = 2)
 
 legend (9, 1.5, lty=c(1,2,1,3,4) ,col=c("red","orange red","dark blue","navy blue","slate blue"),legend=c("MLE", "WP","MED1","MED2","MED3"), bty="n",lwd = 2, cex =1.5)
 
