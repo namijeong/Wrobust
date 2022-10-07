@@ -53,64 +53,48 @@ data = as.numeric( diff(days.times) )
 ###############################################
 library(weibullness)
 
-data1.original = data[1]
-
-## DELTA = c(1, seq(10, 10000, by=100) )
-DELTA = c( seq(0.00001,0.99,length=50), seq(1,1000, length=50)  )
 a2 = 1-pnorm(3)     # alpha over 2
-n = 51 # The original data (no contamination)
 
-UCL.mle = UCL.wp = UCL.seki = numeric(length(DELTA))
- CL.mle =  CL.wp =  CL.seki = numeric(length(DELTA))
-LCL.mle = LCL.wp = LCL.seki = numeric(length(DELTA))
-UCL.e = UCL.wmed = UCL.med1 = UCL.med2 = UCL.med3 = numeric(length(DELTA))
- CL.e =  CL.wmed =  CL.med1 =  CL.med2 =  CL.med3 = numeric(length(DELTA))
-LCL.e = LCL.wmed = LCL.med1 = LCL.med2 = LCL.med3 = numeric(length(DELTA))
+para = weibull.mle(data, threshold=0)
+UCL.mle = qweibull(1-a2, shape=para$shape, scale=para$scale)
+CL.mle = qweibull(0.50, shape=para$shape, scale=para$scale)
+LCL.mle = qweibull(  a2, shape=para$shape, scale=para$scale)
 
-#
-for ( i in seq_along(DELTA) ) { 
-    data[1] = data1.original
-    para = weibull.mle(data, threshold=0)
-    UCL.mle[i] = qweibull(1-a2, shape=para$shape, scale=para$scale)
-     CL.mle[i] = qweibull(0.50, shape=para$shape, scale=para$scale)
-    LCL.mle[i] = qweibull(  a2, shape=para$shape, scale=para$scale)
+para = weibull.wp(data)
+UCL.wp  = qweibull(1-a2, shape=para$shape, scale=para$scale)
+CL.wp = qweibull(0.50, shape=para$shape, scale=para$scale)
+LCL.wp  = qweibull(  a2, shape=para$shape, scale=para$scale)
 
-    para = weibull.wp(data)
-    UCL.wp[i]  = qweibull(1-a2, shape=para$shape, scale=para$scale)
-     CL.wp[i]  = qweibull(0.50, shape=para$shape, scale=para$scale)
-    LCL.wp[i]  = qweibull(  a2, shape=para$shape, scale=para$scale)
+para = weibull.seki(data)
+UCL.seki= qweibull(1-a2, shape=para$shape, scale=para$scale)
+CL.seki= qweibull(0.50, shape=para$shape, scale=para$scale)
+LCL.seki= qweibull(  a2, shape=para$shape, scale=para$scale)
 
-    para = weibull.seki(data)
-    UCL.seki[i]= qweibull(1-a2, shape=para$shape, scale=para$scale)
-     CL.seki[i]= qweibull(0.50, shape=para$shape, scale=para$scale)
-    LCL.seki[i]= qweibull(  a2, shape=para$shape, scale=para$scale)
+para = weibull.e(data)
+UCL.e   = qweibull(1-a2, shape=para$shape, scale=para$scale)
+CL.e  = qweibull(0.50, shape=para$shape, scale=para$scale)
+LCL.e   = qweibull(  a2, shape=para$shape, scale=para$scale)
 
-    para = weibull.e(data)
-    UCL.e[i]   = qweibull(1-a2, shape=para$shape, scale=para$scale)
-     CL.e[i]   = qweibull(0.50, shape=para$shape, scale=para$scale)
-    LCL.e[i]   = qweibull(  a2, shape=para$shape, scale=para$scale)
+para = weibull.wmed(data)
+UCL.wmed = qweibull(1-a2, shape=para$shape, scale=para$scale)
+CL.wmed = qweibull(0.50, shape=para$shape, scale=para$scale)
+LCL.wmed = qweibull(  a2, shape=para$shape, scale=para$scale)
 
-    para = weibull.wmed(data)
-    UCL.wmed[i]= qweibull(1-a2, shape=para$shape, scale=para$scale)
-     CL.wmed[i]= qweibull(0.50, shape=para$shape, scale=para$scale)
-    LCL.wmed[i]= qweibull(  a2, shape=para$shape, scale=para$scale)
+para = weibull.med1(data)
+UCL.med1 = qweibull(1-a2, shape=para$shape, scale=para$scale)
+CL.med1 = qweibull(0.50, shape=para$shape, scale=para$scale)
+LCL.med1 = qweibull(  a2, shape=para$shape, scale=para$scale)
 
-    para = weibull.med1(data)
-    UCL.med1[i]= qweibull(1-a2, shape=para$shape, scale=para$scale)
-     CL.med1[i]= qweibull(0.50, shape=para$shape, scale=para$scale)
-    LCL.med1[i]= qweibull(  a2, shape=para$shape, scale=para$scale)
+para = weibull.med2(data)
+UCL.med2 = qweibull(1-a2, shape=para$shape, scale=para$scale)
+CL.med2  = qweibull(0.50, shape=para$shape, scale=para$scale)
+LCL.med2 = qweibull(  a2, shape=para$shape, scale=para$scale)
 
-    para = weibull.med2(data)
-    UCL.med2[i]= qweibull(1-a2, shape=para$shape, scale=para$scale)
-     CL.med2[i]= qweibull(0.50, shape=para$shape, scale=para$scale)
-    LCL.med2[i]= qweibull(  a2, shape=para$shape, scale=para$scale)
+para = weibull.med3(data)
+UCL.med3 = qweibull(1-a2, shape=para$shape, scale=para$scale)
+CL.med3 = qweibull(0.50, shape=para$shape, scale=para$scale)
+LCL.med3 = qweibull(  a2, shape=para$shape, scale=para$scale)
 
-    para = weibull.med3(data)
-    UCL.med3[i]= qweibull(1-a2, shape=para$shape, scale=para$scale)
-     CL.med3[i]= qweibull(0.50, shape=para$shape, scale=para$scale)
-    LCL.med3[i]= qweibull(  a2, shape=para$shape, scale=para$scale)
-}
-a = length(data)
 ylim = c(0, 40)
 #=============================================================
 ##pdf(file="CC-Sensitivity3.pdf", width=6.5, height=8.0, paper = "special", encoding = "TeXtext.enc")
@@ -118,51 +102,50 @@ ylim = c(0, 40)
 par(mfrow=c(4,2), mar=c(5,5,3,1), omi=c(0,0,0,0), cex=0.5, mex=0.5)
 
 plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
-abline( h = UCL.mle[n], col="red", lwd=0.2)           ## MLE without noise 
-abline( h =  CL.mle[n], col="red", lty=3, lwd=0.2)    ## MLE without noise 
-abline( h = LCL.mle[n], col="red", lwd=0.2)           ## MLE without noise 
+abline( h = UCL.mle, col="red", lwd=0.2)           ## MLE without noise 
+abline( h =  CL.mle, col="red", lty=3, lwd=0.2)    ## MLE without noise 
+abline( h = LCL.mle, col="red", lwd=0.2)           ## MLE without noise 
 text(5,38,labels='MLE',cex=2)
 
 plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
-abline( h = UCL.wp[n], col="red", lwd=0.2)           ## MLE without noise 
-abline( h =  CL.wp[n], col="red", lty=3, lwd=0.2)    ## MLE without noise 
-abline( h = LCL.wp[n], col="red", lwd=0.2)           ## MLE without noise 
+abline( h = UCL.wp, col="red", lwd=0.2)           ## MLE without noise 
+abline( h =  CL.wp, col="red", lty=3, lwd=0.2)    ## MLE without noise 
+abline( h = LCL.wp, col="red", lwd=0.2)           ## MLE without noise 
 text(5,38,labels='WP',cex=2)
 
 plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
-abline( h = UCL.seki[n], col="red", lwd=0.2)           ## MLE without noise 
-abline( h =  CL.seki[n], col="red", lty=3, lwd=0.2)    ## MLE without noise 
-abline( h = LCL.seki[n], col="red", lwd=0.2)           ## MLE without noise 
+abline( h = UCL.seki, col="red", lwd=0.2)           ## MLE without noise 
+abline( h =  CL.seki, col="red", lty=3, lwd=0.2)    ## MLE without noise 
+abline( h = LCL.seki, col="red", lwd=0.2)           ## MLE without noise 
 text(5,38,labels='Seki',cex=2)
 
 plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
-abline( h = UCL.e[n], col="red", lwd=0.2)           ## MLE without noise 
-abline( h =  CL.e[n], col="red", lty=3, lwd=0.2)    ## MLE without noise 
-abline( h = LCL.e[n], col="red", lwd=0.2)           ## MLE without noise 
+abline( h = UCL.e, col="red", lwd=0.2)           ## MLE without noise 
+abline( h =  CL.e, col="red", lty=3, lwd=0.2)    ## MLE without noise 
+abline( h = LCL.e, col="red", lwd=0.2)           ## MLE without noise 
 text(3,38,labels='e',cex=2)
 
 plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
-abline( h = UCL.wmed[n], col="red", lwd=0.2)           ## MLE without noise 
-abline( h =  CL.wmed[n], col="red", lty=3, lwd=0.2)    ## MLE without noise 
-abline( h = LCL.wmed[n], col="red", lwd=0.2)           ## MLE without noise 
+abline( h = UCL.wmed, col="red", lwd=0.2)           ## MLE without noise 
+abline( h =  CL.wmed, col="red", lty=3, lwd=0.2)    ## MLE without noise 
+abline( h = LCL.wmed, col="red", lwd=0.2)           ## MLE without noise 
 text(8,38,labels='W.med',cex=2)
 
 plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
-abline( h = UCL.med1[n], col="red", lwd=0.2)           ## MLE without noise 
-abline( h =  CL.med1[n], col="red", lty=3, lwd=0.2)    ## MLE without noise 
-abline( h = LCL.med1[n], col="red", lwd=0.2)           ## MLE without noise 
+abline( h = UCL.med1, col="red", lwd=0.2)           ## MLE without noise 
+abline( h =  CL.med1, col="red", lty=3, lwd=0.2)    ## MLE without noise 
+abline( h = LCL.med1, col="red", lwd=0.2)           ## MLE without noise 
 text(6,38,labels='med1',cex=2)
 
 plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
-abline( h = UCL.med2[n], col="red", lwd=0.2)           ## MLE without noise 
-abline( h =  CL.med2[n], col="red", lty=3, lwd=0.2)    ## MLE without noise 
-abline( h = LCL.med2[n], col="red", lwd=0.2)           ## MLE without noise 
+abline( h = UCL.med2, col="red", lwd=0.2)           ## MLE without noise 
+abline( h =  CL.med2, col="red", lty=3, lwd=0.2)    ## MLE without noise 
+abline( h = LCL.med2, col="red", lwd=0.2)           ## MLE without noise 
 text(6,38,labels='med2',cex=2)
 
 plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
-abline( h = UCL.med3[n], col="red", lwd=0.2)           ## MLE without noise 
-abline( h =  CL.med3[n], col="red", lty=3, lwd=0.2)    ## MLE without noise 
-abline( h = LCL.med3[n], col="red", lwd=0.2)           ## MLE without noise 
+abline( h = UCL.med3, col="red", lwd=0.2)           ## MLE without noise 
+abline( h =  CL.med3, col="red", lty=3, lwd=0.2)    ## MLE without noise 
+abline( h = LCL.med3, col="red", lwd=0.2)           ## MLE without noise 
 text(6,38,labels='med3',cex=2)
-
 
