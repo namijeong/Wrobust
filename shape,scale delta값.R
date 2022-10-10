@@ -66,7 +66,7 @@ for ( i in seq_along(DELTA) ) {
 ##pdf(file="CC-Sensitivity3.pdf", width=6.5, height=8.0, paper = "special", encoding = "TeXtext.enc")
 ylim = c(-0.5, 4.5)
 ylim1=c(0.7,1.3)
-par(mfrow=c(1,2), mar=c(5,5,3,1), omi=c(0,0,0,0), cex=0.5, mex=0.5)
+par(mfrow=c(2,1), mar=c(5,5,3,1), omi=c(0,0,0,0), cex=0.5, mex=0.5)
 
 
 plot(NA, NA, xlab=expression(delta),ylab="SHAPE", log="x", type="n", xlim=range(DELTA), ylim=ylim )
