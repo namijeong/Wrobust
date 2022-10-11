@@ -77,7 +77,6 @@ LCL.med3 = qweibull(  a2, shape=para$shape, scale=para$scale)
 
 ylim = c(0, 1.4)
 #=============================================================
-##pdf(file="CC-Sensitivity3.pdf", width=6.5, height=8.0, paper = "special", encoding = "TeXtext.enc")
 
 #par(mfrow=c(4,2), mar=c(5,5,3,1), omi=c(0,0,0,0), cex=0.5, mex=0.5)
 
@@ -95,6 +94,10 @@ text(0.9,1.17,"MLE", col="orange red")
 text(1.7,0.9,"med3", col="dark green")
 points(39,data1[39], col="red")
 points(53,data1[53], col="red")
+abline( h = UCL.med1, col="dark blue", lwd=0.2)           ## MLE without noise 
+abline( h =  CL.med1, col="dark blue", lty=3, lwd=0.2)    ## MLE without noise 
+abline( h = LCL.med1, col="dark blue", lwd=0.2) 
+text(1.7,1.07,"med1", col="dark blue")
 
 #=============================================================
 plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
