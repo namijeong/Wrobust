@@ -1,10 +1,10 @@
 
 source("https://raw.githubusercontent.com/namijeong/tar/main/Rm16.R")
 #data = rweibull(n, shape=shape0, scale=scale0)
-data = 1000* c(100,  90,  59, 117, 177,  98, 125, 118,  99, 132, 97, 87, 126, 107, 66, 186,  158,  80,  69, 109)
+#data = 1000* c(100,  90,  59, 117, 177,  98, 125, 118,  99, 132, 97, 87, 126, 107, 66, 186,  158,  80,  69, 109)
 library(weibullness)
-#data = c(15.1 ,12.2 ,17.3, 14.3 , 7.9 ,18.2 ,24.6 ,13.5, 10.0, 30.5)
- hist(data)
+data = c(15.1 ,12.2 ,17.3, 14.3 , 7.9 ,18.2 ,24.6 ,13.5, 10.0, 30.5)
+#hist(data)
 weibull.mle(data, threshold=0)
 weibull.wp(data)
 weibull.e(data)
