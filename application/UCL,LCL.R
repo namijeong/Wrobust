@@ -121,7 +121,7 @@ abline( h = UCL.mle[n], col="black", lwd=0.2)           ## MLE without noise
 lines(DELTA, UCL.med1, col="navy blue", type="l", lwd=2, lty=1)
 lines(DELTA, UCL.med2, col="dark blue", type="l", lwd=2, lty=3)
 lines(DELTA, UCL.med3, col="slate blue", type="l", lwd=2, lty=4)
-legend (1e-05,22, lty=c(1,1,2,1,3,4) ,col=c("black","red","orange red","navy blue","dark blue","slate blue"), 
+legend (1e-05,18, lty=c(1,1,2,1,3,4) ,col=c("black","red","orange red","navy blue","dark blue","slate blue"), 
         legend=c("MLE_pure","MLE", "WP","med1","med2","med3"), bty="n"  ,lwd = 1.5, cex =1.5)
 
 plot(NA, NA, xlab=expression(delta), log="x", ylab="LCL", type="n", xlim=range(DELTA), ylim=ylim1 )
@@ -132,7 +132,7 @@ abline( h = LCL.mle[n], col="black", lwd=0.2)
 lines(DELTA, LCL.med1, col="navy blue", type="l", lwd=2,lty=1)
 lines(DELTA, LCL.med2, col="dark blue", type="l", lwd=2,lty=3)
 lines(DELTA, LCL.med3, col="slate blue", type="l", lwd=2,lty=4)
-legend (1e-05, 0.025, lty=c(1,1,2,1,3,4) ,col=c("black","red","orange red","navy blue","dark blue","slate blue"),
+legend (1e-05,  0.05, lty=c(1,1,2,1,3,4) ,col=c("black","red","orange red","navy blue","dark blue","slate blue"),
         legend=c("MLE_pure","MLE", "WP","med1","med2","med3"), bty="n"  ,lwd = 1.5, cex =1.5)
 
 
