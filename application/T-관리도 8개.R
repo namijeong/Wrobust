@@ -96,56 +96,62 @@ CL.med3 = qweibull(0.50, shape=para$shape, scale=para$scale)
 LCL.med3 = qweibull(  a2, shape=para$shape, scale=para$scale)
 
 ylim = c(0, 40)
+xlim=c(0,82)
+#xlim=c(0,54)
+#ylim=c(0,2)
 #=============================================================
 ##pdf(file="CC-Sensitivity3.pdf", width=6.5, height=8.0, paper = "special", encoding = "TeXtext.enc")
 
-par(mfrow=c(4,2), mar=c(5,5,3,1), omi=c(0,0,0,0), cex=0.5, mex=0.5)
+par(mfrow=c(3,2), mar=c(5,5,3,1), omi=c(0,0,0,0), cex=0.5, mex=0.5)
 
-plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
+plot(data, xlab="time", ylab="CC", type="o", xlim=xlim, ylim=ylim )
 abline( h = UCL.mle, col="red", lwd=0.2)           ## MLE without noise 
 abline( h =  CL.mle, col="red", lty=3, lwd=0.2)    ## MLE without noise 
 abline( h = LCL.mle, col="red", lwd=0.2)           ## MLE without noise 
-text(5,38,labels='MLE',cex=2)
+text(5,1.9,labels='MLE',cex=2)
+#text(6,38)
 
-plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
+plot(data, xlab="time", ylab="CC", type="o", xlim=xlim, ylim=ylim )
 abline( h = UCL.wp, col="red", lwd=0.2)           ## MLE without noise 
 abline( h =  CL.wp, col="red", lty=3, lwd=0.2)    ## MLE without noise 
 abline( h = LCL.wp, col="red", lwd=0.2)           ## MLE without noise 
-text(5,38,labels='WP',cex=2)
+text(5,1.9,labels='WP',cex=2)
 
-plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
+plot(data, xlab="time", ylab="CC", type="o", xlim=xlim, ylim=ylim )
 abline( h = UCL.seki, col="red", lwd=0.2)           ## MLE without noise 
 abline( h =  CL.seki, col="red", lty=3, lwd=0.2)    ## MLE without noise 
 abline( h = LCL.seki, col="red", lwd=0.2)           ## MLE without noise 
-text(5,38,labels='Seki',cex=2)
+text(5,1.9,labels='Seki',cex=2)
 
-plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
+plot(data, xlab="time", ylab="CC", type="o", xlim=xlim, ylim=ylim )
 abline( h = UCL.e, col="red", lwd=0.2)           ## MLE without noise 
 abline( h =  CL.e, col="red", lty=3, lwd=0.2)    ## MLE without noise 
 abline( h = LCL.e, col="red", lwd=0.2)           ## MLE without noise 
-text(3,38,labels='e',cex=2)
+text(5,1.9,labels='e',cex=2)
 
-plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
+
+plot(data, xlab="time", ylab="CC", type="o", xlim=xlim, ylim=ylim )
 abline( h = UCL.wmed, col="red", lwd=0.2)           ## MLE without noise 
 abline( h =  CL.wmed, col="red", lty=3, lwd=0.2)    ## MLE without noise 
 abline( h = LCL.wmed, col="red", lwd=0.2)           ## MLE without noise 
-text(8,38,labels='W.med',cex=2)
+text(5,1.9,labels='W.med',cex=2)
 
-plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
+
+plot(data, xlab="time", ylab="CC", type="o", xlim=xlim, ylim=ylim )
 abline( h = UCL.med1, col="red", lwd=0.2)           ## MLE without noise 
 abline( h =  CL.med1, col="red", lty=3, lwd=0.2)    ## MLE without noise 
 abline( h = LCL.med1, col="red", lwd=0.2)           ## MLE without noise 
-text(6,38,labels='med1',cex=2)
+text(5,1.9,labels='med1',cex=2)
 
-plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
+plot(data, xlab="time", ylab="CC", type="o", xlim=xlim, ylim=ylim )
 abline( h = UCL.med2, col="red", lwd=0.2)           ## MLE without noise 
 abline( h =  CL.med2, col="red", lty=3, lwd=0.2)    ## MLE without noise 
 abline( h = LCL.med2, col="red", lwd=0.2)           ## MLE without noise 
-text(6,38,labels='med2',cex=2)
+text(5,1.9,labels='med2',cex=2)
 
-plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
+plot(data, xlab="time", ylab="CC", type="o", xlim=xlim, ylim=ylim )
 abline( h = UCL.med3, col="red", lwd=0.2)           ## MLE without noise 
 abline( h =  CL.med3, col="red", lty=3, lwd=0.2)    ## MLE without noise 
 abline( h = LCL.med3, col="red", lwd=0.2)           ## MLE without noise 
-text(6,38,labels='med3',cex=2)
+text(5,1.9,labels='med3',cex=2)
 
