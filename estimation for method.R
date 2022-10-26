@@ -13,8 +13,9 @@ shape0 = 3; scale0 = 1
  #data = c(15.1 ,12.2 ,17.3, 14.3 , 7.9 ,18.2 ,24.6 ,13.5, 10.0, 30.5)
  weibull.mle(data, threshold=0)
    weibull.wp(data)
-    weibull.e(data)
+    
     weibull.seki(data)
+weibull.e(data)
    weibull.wmed(data)
      weibull.med1(data)
     weibull.med2(data)
