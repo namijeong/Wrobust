@@ -64,9 +64,9 @@ for ( i in seq_along(DELTA) ) {
 
 #=============================================================
 ##pdf(file="CC-Sensitivity3.pdf", width=6.5, height=8.0, paper = "special", encoding = "TeXtext.enc")
-ylim = c(-0.5, 4.5)
-ylim1=c(0.7,1.3)
-par(mfrow=c(1,2), mar=c(5,5,3,1), omi=c(0,0,0,0), cex=0.5, mex=0.5)
+ylim = c(0, 4)
+ylim1=c(0.8,1.2)
+par(mfrow=c(1,2), mar=c(4,4,3,1), omi=c(0,0,0,0), cex=0.5, mex=0.5)
 
 
 plot(NA, NA, xlab=expression(delta),ylab="SHAPE", log="x", type="n", xlim=range(DELTA), ylim=ylim )
@@ -82,9 +82,9 @@ lines(DELTA, SHAPE.med1, col="dark blue", type="l", lwd=2,lty=1)
 lines(DELTA, SHAPE.med2, col="navy blue", type="l", lwd=2,lty=3)
 lines(DELTA, SHAPE.med3, col="slate blue", type="l", lwd=2,lty=4)
 
-legend (1e-05, 4.3,lty=c(1,2,3,1) ,col=c("red","Orange red","pale violet red","Lime green"),
+legend (1e-05, 3.5,lty=c(1,2,3,1) ,col=c("red","Orange red","pale violet red","Lime green"),
         legend=c("MLE", "WP","seki","e"), bty="n" ,lwd = 2, cex =1.5)
-legend (1e-03, 4.3,lty=c(3,1,3,4) ,col=c( "Forest green","dark blue","navy blue","slate blue"),
+legend (1e-03, 3.5,lty=c(3,1,3,4) ,col=c( "Forest green","dark blue","navy blue","slate blue"),
         legend=c("W.med","med1","med2","med3"), bty="n" ,lwd = 2, cex =1.5)
 
 plot(NA, NA, xlab=expression(delta),ylab="SCALE" ,log="x", type="n", xlim=range(DELTA), ylim=ylim1 )
@@ -100,7 +100,7 @@ lines(DELTA, SCALE.med1, col="dark blue", type="l", lwd=2,lty=1)
 lines(DELTA, SCALE.med2, col="navy blue", type="l", lwd=2,lty=3)
 lines(DELTA, SCALE.med3, col="slate blue", type="l", lwd=2,lty=4)
   
-legend (1e-05, 0.85, lty=c(1,2,3,1) ,col=c("red","Orange red","pale violet red","Lime green"),
+legend (1e-05, 0.9, lty=c(1,2,3,1) ,col=c("red","Orange red","pale violet red","Lime green"),
         legend=c("MLE", "WP","seki","e"), bty="n"  ,lwd = 2, cex =1.5)
-legend (1e-03, 0.85, lty=c(3,1,3,4) ,col=c( "Forest green","dark blue","navy blue","slate blue"),
+legend (1e-03, 0.9, lty=c(3,1,3,4) ,col=c( "Forest green","dark blue","navy blue","slate blue"),
         legend=c("W.med","med1","med2","med3"), bty="n"  ,lwd = 2, cex =1.5)
