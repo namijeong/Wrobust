@@ -82,8 +82,10 @@ lines(DELTA, SHAPE.med1, col="dark blue", type="l", lwd=2,lty=1)
 lines(DELTA, SHAPE.med2, col="navy blue", type="l", lwd=2,lty=3)
 lines(DELTA, SHAPE.med3, col="slate blue", type="l", lwd=2,lty=4)
 
-legend (1e-05, 4.3,lty=c(1,2,3,1,3,1,3,4) ,col=c("red","Orange red","pale violet red","Lime green", "Forest green","dark blue","navy blue","slate blue"),
-        legend=c("MLE", "WP","seki","e","W.med","med1","med2","med3"), bty="n" ,lwd = 2, cex =1.5)
+legend (1e-05, 4.3,lty=c(1,2,3,1) ,col=c("red","Orange red","pale violet red","Lime green"),
+        legend=c("MLE", "WP","seki","e"), bty="n" ,lwd = 2, cex =1.5)
+legend (1e-03, 4.3,lty=c(3,1,3,4) ,col=c( "Forest green","dark blue","navy blue","slate blue"),
+        legend=c("W.med","med1","med2","med3"), bty="n" ,lwd = 2, cex =1.5)
 
 plot(NA, NA, xlab=expression(delta),ylab="SCALE" ,log="x", type="n", xlim=range(DELTA), ylim=ylim1 )
 abline( h = scale0, col="black", lwd=1)
@@ -98,5 +100,7 @@ lines(DELTA, SCALE.med1, col="dark blue", type="l", lwd=2,lty=1)
 lines(DELTA, SCALE.med2, col="navy blue", type="l", lwd=2,lty=3)
 lines(DELTA, SCALE.med3, col="slate blue", type="l", lwd=2,lty=4)
   
-legend (1e-05, 0.85, lty=c(1,2,3,1,3,1,3,4) ,col=c("red","Orange red","pale violet red","Lime green", "Forest green","dark blue","navy blue","slate blue"),
-        legend=c("MLE", "WP","seki","e","W.med","med1","med2","med3"), bty="n"  ,lwd = 2, cex =1.5)
+legend (1e-05, 0.85, lty=c(1,2,3,1) ,col=c("red","Orange red","pale violet red","Lime green"),
+        legend=c("MLE", "WP","seki","e"), bty="n"  ,lwd = 2, cex =1.5)
+legend (1e-03, 0.85, lty=c(3,1,3,4) ,col=c( "Forest green","dark blue","navy blue","slate blue"),
+        legend=c("W.med","med1","med2","med3"), bty="n"  ,lwd = 2, cex =1.5)
