@@ -12,7 +12,8 @@ X=sort(data)
 Sweibull <- function(x, shape,scale) {
   (1-pweibull(x,shape=shape,scale=scale))}
 
-par( mfrow=c(1,1), mar=c(6.5,4.5,3,1), omi=c(0,0,0,0), cex=1 ,mex=0.6 )
+pdf(file="Fig4.pdf", width=14.5, height=6.6, paper = "special", encoding = "TeXtext.enc")
+par( mfrow=c(1,3), mar=c(6.5,4.8,3,1), omi=c(0,0,0,0), cex=1 ,mex=0.6 )
 #==============================================================================
 xlim = c(9,14)
 #xlim = c(0,5)
