@@ -115,7 +115,7 @@ ylim = c(0, 100)
 #=============================================================
 ##pdf(file="CC-Sensitivity3.pdf", width=6.5, height=8.0, paper = "special", encoding = "TeXtext.enc")
 
-par(mfrow=c(3,2), mar=c(5,5,3,1), omi=c(0,0,0,0), cex=0.5, mex=0.5)
+par(mfrow=c(2,3), mar=c(5,5,3,1), omi=c(0,0,0,0), cex=0.5, mex=0.5)
 
 plot(NA, NA, xlab=expression(delta), log="x", ylab="CC", type="n", xlim=range(DELTA), ylim=ylim )
 lines(DELTA, UCL.mle, col="black", type="l", lwd=2)
