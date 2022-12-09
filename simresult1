@@ -2,11 +2,13 @@
 rm(list=ls())
 source(https://raw.githubusercontent.com/namijeong/Wrobust/main/Rm16.R")
 
+png(file = "50500.png", width = 1550, height = 1830)
+
 library(weibullness)
 
-n = 5
+n = 50
 ITER = 200
-shape0 = 0.25  ; scale0 = 1
+shape0 = 5  ; scale0 = 1
 noise = 0   ################# REPEAT THIS with different noise level
 
 SHAPE.mle = SHAPE.wp = SHAPE.wmed = SHAPE.med1 = SHAPE.med2 = SHAPE.med3 = numeric(ITER)
@@ -46,8 +48,8 @@ for ( i in seq_len(ITER) ) {
   para = weibull.med3(data)
   SHAPE.med3[i] = para$shape;  SCALE.med3[i] = para$scale
 }
-png(file = "Fig1.png", width = 1550, height = 1830)
-noise = 100   ################# REPEAT THIS with different noise level
+
+noise = 10   ################# REPEAT THIS with different noise level
 
 SHAPE.mle1 = SHAPE.wp1 = SHAPE.wmed1 = SHAPE.med11 = SHAPE.med21 = SHAPE.med31 = numeric(ITER)
 SCALE.mle1 = SCALE.wp1 = SCALE.wmed1 = SCALE.med11 = SCALE.med21 = SCALE.med31 = numeric(ITER)
@@ -87,7 +89,7 @@ for ( i in seq_len(ITER) ) {
   SHAPE.med31[i] = para$shape;  SCALE.med31[i] = para$scale
 }
 
-noise =  1000  ################# REPEAT THIS with different noise level
+noise =  100  ################# REPEAT THIS with different noise level
 
 SHAPE.mle11 = SHAPE.wp11 = SHAPE.wmed11 = SHAPE.med111 = SHAPE.med211 = SHAPE.med311 = numeric(ITER)
 SCALE.mle11 = SCALE.wp11 = SCALE.wmed11 = SCALE.med111 = SCALE.med211 = SCALE.med311 = numeric(ITER)
