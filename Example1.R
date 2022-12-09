@@ -1,7 +1,7 @@
 
 ##source("https://raw.githubusercontent.com/AppliedStat/SCD/master/SCD.R")
 ## source("Rm16.R")
-source(https://raw.githubusercontent.com/namijeong/Wrobust/main/Rm16.R")
+source("https://raw.githubusercontent.com/namijeong/Wrobust/main/Rm16.R")
 #------------------------------
 
 library(weibullness)
