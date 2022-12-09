@@ -1,8 +1,6 @@
 
 rm(list=ls())
-source("C:/nnn/Rm16.R")
-
-
+source(https://raw.githubusercontent.com/namijeong/Wrobust/main/Rm16.R")
 
 library(weibullness)
 
