@@ -5,9 +5,9 @@ library(weibullness)
 
 n = 50
 ITER = 10000
-shape0 = 2.5  ; scale0 = 1
+shape0 = 0.25  ; scale0 = 1
 
-png(file = "gmse3.png", width = 1540, height = 1100)
+png(file = "gmse1.png", width = 1540, height = 1700)
 
 par( mfrow=c(3,1), mar=c(7,5,2,0), omi=c(0,0,0,0), cex=1.8, mex=0.5 )
 
@@ -154,7 +154,7 @@ gMSE = rbind(gVAR, gBIASsq)
 
 colnames(gMSE) = c("MLE", "WP", "Seki", "e", "W.med", "med1", "med2", "med3")
 
-barplot(gMSE, xlab=NA, ylab="gMSE",ylim=c(0,0.03),  sub="(i) gMSE",
+barplot(gMSE, xlab=NA, ylab="gMSE",ylim=c(0,0.04),  sub="(i) gMSE",
         col=c("cyan1","red3"), beside=FALSE, angle=c(0,45), density=c(10,10),
         legend.text = c("Generalized variance", "Generalized squared bias"),
         args.legend = list(x = "topright", horiz=FALSE, bty="n", cex=1.2),
@@ -309,14 +309,14 @@ gMSE = rbind(gVAR, gBIASsq)
 
 colnames(gMSE) = c("MLE", "WP", "Seki", "e", "W.med", "med1", "med2", "med3")
 
-barplot(gMSE, xlab=NA, ylab="gMSE",ylim=c(0,0.03),  sub="(ii) outlier gMSE",
+barplot(gMSE, xlab=NA, ylab="gMSE",ylim=c(0,0.04),  sub="(ii) outlier gMSE",
         col=c("cyan1","red3"), beside=FALSE, angle=c(0,45), density=c(10,10),
         legend.text = c("Generalized variance", "Generalized squared bias"),
         args.legend = list(x = "topright", horiz=FALSE, bty="n", cex=1.2),
         cex.lab=1, cex.axis=1   )
 
 gmse1=rbind(gVAR, gBIASsq,  apply(gMSE,2,sum) )
-noise = 1/100   ################# REPEAT THIS with different noise level
+noise = 1/100   ############################################################################# REPEAT THIS with different noise level
 
 SHAPE.mle = SHAPE.wp = SHAPE.wmed = SHAPE.med1 = SHAPE.med2 = SHAPE.med3 = numeric(ITER)
 SCALE.mle = SCALE.wp = SCALE.wmed = SCALE.med1 = SCALE.med2 = SCALE.med3 = numeric(ITER)
@@ -459,7 +459,7 @@ gMSE = rbind(gVAR, gBIASsq)
 
 colnames(gMSE) = c("MLE", "WP", "Seki", "e", "W.med", "med1", "med2", "med3")
 
-barplot(gMSE, xlab=NA, ylab="gMSE",ylim=c(0,0.03),  sub="(iii) inlier gMSE",
+barplot(gMSE, xlab=NA, ylab="gMSE",ylim=c(0,0.04),  sub="(iii) inlier gMSE",
         col=c("cyan1","red3"), beside=FALSE, angle=c(0,45), density=c(10,10),
         legend.text = c("Generalized variance", "Generalized squared bias"),
         args.legend = list(x = "topright", horiz=FALSE, bty="n", cex=1.2),
