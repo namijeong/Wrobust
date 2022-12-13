@@ -6,6 +6,7 @@ library(weibullness)
 n = 50
 ITER = 10000
 shape0 = 1  ; scale0 = 1
+set.seed(1)
 
 png(file = "gmse2.png", width = 1540, height = 2100)
 
