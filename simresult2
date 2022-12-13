@@ -5,9 +5,9 @@ library(weibullness)
 
 n = 50
 ITER = 10000
-shape0 = 5  ; scale0 = 1
+shape0 = 1  ; scale0 = 1
 
-png(file = "gmse4.png", width = 1540, height = 1700)
+png(file = "gmse2.png", width = 1540, height = 2100)
 
 par( mfrow=c(3,1), mar=c(7,5,2,0), omi=c(0,0,0,0), cex=1.8, mex=0.5 )
 
@@ -154,7 +154,7 @@ gMSE = rbind(gVAR, gBIASsq)
 
 colnames(gMSE) = c("MLE", "WP", "Seki", "e", "W.med", "med1", "med2", "med3")
 
-barplot(gMSE, xlab=NA, ylab="gMSE",ylim=c(0,0.04),  sub="(i) gMSE",
+barplot(gMSE, xlab=NA, ylab="gMSE",ylim=c(0,0.05),  sub="(i) gMSE",
         col=c("cyan1","red3"), beside=FALSE, angle=c(0,45), density=c(10,10),
         legend.text = c("Generalized variance", "Generalized squared bias"),
         args.legend = list(x = "topright", horiz=FALSE, bty="n", cex=1.2),
@@ -309,7 +309,7 @@ gMSE = rbind(gVAR, gBIASsq)
 
 colnames(gMSE) = c("MLE", "WP", "Seki", "e", "W.med", "med1", "med2", "med3")
 
-barplot(gMSE, xlab=NA, ylab="gMSE",ylim=c(0,0.04),  sub="(ii) outlier gMSE",
+barplot(gMSE, xlab=NA, ylab="gMSE",ylim=c(0,0.05),  sub="(ii) outlier gMSE",
         col=c("cyan1","red3"), beside=FALSE, angle=c(0,45), density=c(10,10),
         legend.text = c("Generalized variance", "Generalized squared bias"),
         args.legend = list(x = "topright", horiz=FALSE, bty="n", cex=1.2),
@@ -459,7 +459,7 @@ gMSE = rbind(gVAR, gBIASsq)
 
 colnames(gMSE) = c("MLE", "WP", "Seki", "e", "W.med", "med1", "med2", "med3")
 
-barplot(gMSE, xlab=NA, ylab="gMSE",ylim=c(0,0.04),  sub="(iii) inlier gMSE",
+barplot(gMSE, xlab=NA, ylab="gMSE",ylim=c(0,0.05),  sub="(iii) inlier gMSE",
         col=c("cyan1","red3"), beside=FALSE, angle=c(0,45), density=c(10,10),
         legend.text = c("Generalized variance", "Generalized squared bias"),
         args.legend = list(x = "topright", horiz=FALSE, bty="n", cex=1.2),
