@@ -1,6 +1,5 @@
 rm(list=ls())
 source("https://raw.githubusercontent.com/namijeong/Wrobust/main/Rm16.R")
-
 #
 data = 1000* c(100,  90,  59, 117, 177,  98, 125, 118,  99, 132, 97, 87, 126, 107, 66, 186,  158,  80,  69, 109)
 library(weibullness)
@@ -16,7 +15,7 @@ Sweibull <- function(x, shape,scale) {
 
 png(file="wp2.png", width=1540, height=700)
 
-par( mfrow=c(1,3), mar=c(6.5,4.8,3,1), omi=c(0,0,0,0), cex=1.8 ,mex=0.75 )
+par( mfrow=c(1,3), mar=c(6,4.8,3,0.1), omi=c(0,0,0,0), cex=1.8 ,mex=0.75 )
 #==============================================================================
 xlim = c(9,14)
 #xlim = c(0,5)
