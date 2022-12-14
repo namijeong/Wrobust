@@ -82,22 +82,23 @@ ylim = c(0, 1.4)
 png(filename = "phase12.png", height = 550, width = 780)
 
 plot(data1, xlab="Observation", ylab="Time Between Events", type="o", xlim=c(0,55), ylim=ylim )
-abline( h = UCL.mle, col="orange red", lwd=1)           ## MLE without noise 
-abline( h =  CL.mle, col="orange red", lty=3, lwd=1)    ## MLE without noise 
-abline( h = LCL.mle, col="orange red", lwd=1)           ## MLE without noise 
+abline( h = UCL.mle, col="orange red", lwd=1.2)           ## MLE without noise 
+abline( h =  CL.mle, col="orange red", lty=3, lwd=1.2)    ## MLE without noise 
+abline( h = LCL.mle, col="orange red", lwd=1.2)           ## MLE without noise 
 abline(v= 30 , col="gold")
-text(15,1.3,"Phase 1")
-text(44,1.3,"Phase 2")
-abline( h = UCL.med3, col="dark green", lwd=1)           ## MLE without noise 
-abline( h =  CL.med3, col="dark green", lty=3, lwd=1)    ## MLE without noise 
-abline( h = LCL.med3, col="dark green", lwd=1) 
-text(0.9,1.17,"MLE", col="orange red")
-text(1.7,0.9,"med3", col="dark green")
-points(39,data1[39], col="red")
-points(53,data1[53], col="red")
-abline( h = UCL.med1, col="dark blue", lwd=1)           ## MLE without noise 
-abline( h =  CL.med1, col="dark blue", lty=3, lwd=1)    ## MLE without noise 
-abline( h = LCL.med1, col="dark blue", lwd=1) 
-text(1.7,1.07,"med1", col="dark blue")
+text(15,1.3,"Phase 1",cex=1.3)
+text(44,1.3,"Phase 2",cex=1.3)
+abline( h = UCL.med3, col="dark green", lwd=1.2)           ## MLE without noise 
+abline( h =  CL.med3, col="dark green", lty=3, lwd=1.2)    ## MLE without noise 
+abline( h = LCL.med3, col="dark green", lwd=1.2) 
+text(1.7,1.17,"MLE", col="orange red",cex=1.1)
+text(1.7,0.9,"med3", col="dark green",cex=1.1)
+points(39,data1[39], col="red",cex=1.3)
+points(53,data1[53], col="red",cex=1.3)
+abline( h = UCL.med1, col="dark blue", lwd=1.2)           ## MLE without noise 
+abline( h =  CL.med1, col="dark blue", lty=3, lwd=1.2)    ## MLE without noise 
+abline( h = LCL.med1, col="dark blue", lwd=1.2) 
+text(1.7,1.07,"med1", col="dark blue",cex=1.1)
 dev.off()
+
 
