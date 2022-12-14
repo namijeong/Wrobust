@@ -1,7 +1,7 @@
 
-   source("./Rm16.R")
-   library(weibullness)
-## source("S:/nnn/Rm16.R")
+source("https://raw.githubusercontent.com/namijeong/Wrobust/main/Rm16.R")
+library(weibullness)
+
 
 #------------------------------
 # https://doi.org/10.2307/2335266
