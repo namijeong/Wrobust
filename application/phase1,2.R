@@ -79,66 +79,25 @@ ylim = c(0, 1.4)
 #=============================================================
 
 #par(mfrow=c(4,2), mar=c(5,5,3,1), omi=c(0,0,0,0), cex=0.5, mex=0.5)
+png(filename = "phase12.png", height = 550, width = 780)
 
 plot(data1, xlab="Observation", ylab="Time Between Events", type="o", xlim=c(0,55), ylim=ylim )
-abline( h = UCL.mle, col="orange red", lwd=0.2)           ## MLE without noise 
-abline( h =  CL.mle, col="orange red", lty=3, lwd=0.2)    ## MLE without noise 
-abline( h = LCL.mle, col="orange red", lwd=0.2)           ## MLE without noise 
+abline( h = UCL.mle, col="orange red", lwd=1)           ## MLE without noise 
+abline( h =  CL.mle, col="orange red", lty=3, lwd=1)    ## MLE without noise 
+abline( h = LCL.mle, col="orange red", lwd=1)           ## MLE without noise 
 abline(v= 30 , col="gold")
 text(15,1.3,"Phase 1")
 text(44,1.3,"Phase 2")
-abline( h = UCL.med3, col="dark green", lwd=0.2)           ## MLE without noise 
-abline( h =  CL.med3, col="dark green", lty=3, lwd=0.2)    ## MLE without noise 
-abline( h = LCL.med3, col="dark green", lwd=0.2) 
+abline( h = UCL.med3, col="dark green", lwd=1)           ## MLE without noise 
+abline( h =  CL.med3, col="dark green", lty=3, lwd=1)    ## MLE without noise 
+abline( h = LCL.med3, col="dark green", lwd=1) 
 text(0.9,1.17,"MLE", col="orange red")
 text(1.7,0.9,"med3", col="dark green")
 points(39,data1[39], col="red")
 points(53,data1[53], col="red")
-abline( h = UCL.med1, col="dark blue", lwd=0.2)           ## MLE without noise 
-abline( h =  CL.med1, col="dark blue", lty=3, lwd=0.2)    ## MLE without noise 
-abline( h = LCL.med1, col="dark blue", lwd=0.2) 
+abline( h = UCL.med1, col="dark blue", lwd=1)           ## MLE without noise 
+abline( h =  CL.med1, col="dark blue", lty=3, lwd=1)    ## MLE without noise 
+abline( h = LCL.med1, col="dark blue", lwd=1) 
 text(1.7,1.07,"med1", col="dark blue")
-
-#=============================================================
-plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
-abline( h = UCL.wp, col="red", lwd=0.2)           ## MLE without noise 
-abline( h =  CL.wp, col="red", lty=3, lwd=0.2)    ## MLE without noise 
-abline( h = LCL.wp, col="red", lwd=0.2)           ## MLE without noise 
-text(5,38,labels='WP',cex=2)
-
-plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
-abline( h = UCL.seki, col="red", lwd=0.2)           ## MLE without noise 
-abline( h =  CL.seki, col="red", lty=3, lwd=0.2)    ## MLE without noise 
-abline( h = LCL.seki, col="red", lwd=0.2)           ## MLE without noise 
-text(5,38,labels='Seki',cex=2)
-
-plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
-abline( h = UCL.e, col="red", lwd=0.2)           ## MLE without noise 
-abline( h =  CL.e, col="red", lty=3, lwd=0.2)    ## MLE without noise 
-abline( h = LCL.e, col="red", lwd=0.2)           ## MLE without noise 
-text(3,38,labels='e',cex=2)
-
-plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
-abline( h = UCL.wmed, col="red", lwd=0.2)           ## MLE without noise 
-abline( h =  CL.wmed, col="red", lty=3, lwd=0.2)    ## MLE without noise 
-abline( h = LCL.wmed, col="red", lwd=0.2)           ## MLE without noise 
-text(8,38,labels='W.med',cex=2)
-
-plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
-abline( h = UCL.med1, col="dark green", lwd=0.2)           ## MLE without noise 
-abline( h =  CL.med1, col="dark green", lty=3, lwd=0.2)    ## MLE without noise 
-abline( h = LCL.med1, col="dark green", lwd=0.2)           ## MLE without noise 
-text(6,38,labels='med1',cex=2)
-
-plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
-abline( h = UCL.med2, col="red", lwd=0.2)           ## MLE without noise 
-abline( h =  CL.med2, col="red", lty=3, lwd=0.2)    ## MLE without noise 
-abline( h = LCL.med2, col="red", lwd=0.2)           ## MLE without noise 
-text(6,38,labels='med2',cex=2)
-
-plot(data, xlab="time", ylab="CC", type="o", xlim=c(0,82), ylim=ylim )
-abline( h = UCL.med3, col="red", lwd=0.2)           ## MLE without noise 
-abline( h =  CL.med3, col="red", lty=3, lwd=0.2)    ## MLE without noise 
-abline( h = LCL.med3, col="red", lwd=0.2)           ## MLE without noise 
-text(6,38,labels='med3',cex=2)
+dev.off()
 
